@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-1-algorithm" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>What is an Algorithm?</title>
+
+  <p>You have probably heard the term "algorithm" before, likely in the context of computer programming, problem solving, or artificial intelligence. Algorithms appear in many different places, and in many different forms. However, at the most basic level, an algorithm is just a sequence of steps for completing some task.
+    <definition xml:id="def-algorithm">
+      <statement>
+        <p>
+          An <term>algorithm</term> is a finite sequence of steps that accomplish a task.
+        </p>
+      </statement>
+    </definition>
+  </p>
+
+  <p>With this definition, there are many things that can be considered algorithms - including some outside of computer science altogether! The following are examples of algorithms:
+    <ul>
+      <li>
+        <p>
+          A process for taking a list of numbers, and sorting them into ascending order. This process could be described to another person, or written in a programming language such as Python, C++, or Java.
+        </p>
+      </li>
+      <li>
+        <p>
+          A recipe for baking chocolate chip cookies. This process could be demonstrated in a cooking TV show, or written out as a list of ingredients and steps.
+        </p>
+      </li>
+      <li>
+        <p>
+          Instructions for building a bookcase. This process could be described with a sequence of pictures showing how the pieces fit together, or an online video tutorial.
+        </p>
+      </li>
+    </ul>
+    Each of these is a finite sequence of steps accomplishing a task, though they could be communicated quite differently. The algorithm is the process itself, and this process can be described in many different ways.
+  </p>
+  <p>Of course, in this book we will be focusing on algorithms in the context of computer science. We will consider a variety of problems in computer science and mathematics, and develop algorithms to solve these problems. For each of these algorithms, we will focus on the following:
+    <ul>  
+      <li>
+        <p>
+          How does the algorithm work?
+        </p>
+      </li>
+      <li>
+        <p>
+          How can we effectively communicate the algorithm?
+        </p>
+      </li>
+      <li>
+        <p>
+          How can we implement the algorithm in a programming language?
+        </p>
+      </li>
+      <li>
+        <p>
+          How "good" is the algorithm?
+        </p>
+      </li>
+      <li>
+        <p>
+          What strategies can we learn from this algorithm to apply to future problems?
+        </p>
+      </li>
+    </ul>
+  Notice that programming is only one aspect of working with algorithms. In fact, in order to be mostly language-agnostic, this book will leave implementations of most algorithms as exercises for the reader.
+  </p>
+
+</section>
