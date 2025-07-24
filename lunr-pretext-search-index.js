@@ -60,8 +60,26 @@ var ptx_lunr_docs = [
   "url": "asymptotics-2-formal_defs.html",
   "type": "Section",
   "number": "2.2",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Formal Definitions",
+  "body": " Formal Definitions  In order to be a useful measure for analyzing the worst case runtime of algorithms, we have come to the following idea for an function being an asymptotic upper bound for a function :   For large enough inputs sizes , is less than or equal to (times some constant).   We translate this idea into a formal mathematical definition with the following.    Let be a function, and let be another function. We say that  is order  , written , if there exist constants and such that for every integer , .  When , we say that is an asymptotic upper bound for  .    "
+},
+{
+  "id": "asymptotics-2-formal_defs-3",
+  "level": "2",
+  "url": "asymptotics-2-formal_defs.html#asymptotics-2-formal_defs-3",
+  "type": "Insight",
+  "number": "2.2.1",
+  "title": "",
+  "body": " For large enough inputs sizes , is less than or equal to (times some constant).  "
+},
+{
+  "id": "def-bigO",
+  "level": "2",
+  "url": "asymptotics-2-formal_defs.html#def-bigO",
+  "type": "Definition",
+  "number": "2.2.2",
+  "title": "",
+  "body": "  Let be a function, and let be another function. We say that  is order  , written , if there exist constants and such that for every integer , .  When , we say that is an asymptotic upper bound for  .   "
 },
 {
   "id": "asymptotics-3-intuition",
@@ -78,8 +96,26 @@ var ptx_lunr_docs = [
   "url": "asymptotics-4-proofs.html",
   "type": "Section",
   "number": "2.4",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Proving <span class=\"process-math\">\\(T(n)=O(f(n))\\)<\/span>",
+  "body": " Proving       Translating this statement into the formal definition, we need to prove that for functions and , there exist and such that if , then . In other words, if , then .  Based on our previous investigation, there are various choices for and that could work here. One such choice is  Now, we are ready to write our formal proof.   We will show that there exist integers and such that if , then .  Let and . Then, if , we have: Thus, we have , proving that    "
+},
+{
+  "id": "asymptotics-4-proofs-2",
+  "level": "2",
+  "url": "asymptotics-4-proofs.html#asymptotics-4-proofs-2",
+  "type": "Claim",
+  "number": "2.4.1",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "asymptotics-4-proofs-6",
+  "level": "2",
+  "url": "asymptotics-4-proofs.html#asymptotics-4-proofs-6",
+  "type": "Proof",
+  "number": "2.4.1",
+  "title": "",
+  "body": " We will show that there exist integers and such that if , then .  Let and . Then, if , we have: Thus, we have , proving that   "
 },
 {
   "id": "asymptotics-5-not_proofs",
@@ -87,8 +123,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-5-not_proofs.html",
   "type": "Section",
   "number": "2.5",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Proving <span class=\"process-math\">\\(T(n)\\)<\/span> is not <span class=\"process-math\">\\(O(f(n))\\)<\/span>",
+  "body": " Proving is not  Text  "
 },
 {
   "id": "asymptotics-6-properties",
