@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="asymptotics-4-proofs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Title</title>
+  <title>Proving <m>T(n)=O(f(n))</m></title>
 
-  <p>Text</p>
+  <claim>
+    <p>
+      <m>n=O(n^2)</m>
+    </p>
+  </claim>
+
+  <p>
+    Translating this statement into the formal definition, we need to prove that for functions <m>T(n)=n</m> and <m>f(n)=n^2</m>, there exist <m>c\gt 0</m> and <m>n_0\geq 0</m> such that if <m>n\geq n_0</m>, then <m>T(n) \leq c\cdot f(n)</m>. In other words, if <m>n\geq n_0</m>, then <m>n \leq c n^2</m>.
+  </p>
+  <p>
+    Based on our previous investigation, there are various choices for <m>c</m> and <m>n_0</m> that could work here. One such choice is <m>c=1</m> and <m>n_0=1</m>. 
+  </p>
+  <p>
+    Now, let's write our formal proof.
+  </p>
+
+  <proof>
+    <p>We will show that there exist integers <m>c\gt 0</m> and <m>n_0\geq 0</m> such that if <m>n\geq n_0</m>, then <m>n \leq cn^2</m>.</p>
+    <p>Let <m>c=1</m> and <m>n_0=1</m>. Then, if <m>n\geq n_0</m>, we have:
+      <md>
+        <mrow>n \amp = 1\cdot n, \amp\amp</mrow>
+        <mrow> \amp \leq n\cdot n, \amp\amp \text{ because }n\geq n_0=1,</mrow> 
+        <mrow> \amp \leq n^2, \amp\amp</mrow>
+        <mrow> \amp = 1\cdot n^2, \amp\amp</mrow>
+        <mrow> \amp = c\cdot n^2, \amp\amp \text{ because }c=1.</mrow>
+      </md>
+    Thus, we have <m>n\leq cn^2</m>, proving that <m>n=O(n^2).</m>
+    </p>
+  </proof>
 
 </section>

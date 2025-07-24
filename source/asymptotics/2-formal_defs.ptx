@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="asymptotics-2-formal_defs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Title</title>
+  <title>Formal Definitions</title>
 
-  <p>Text</p>
+  <p>
+    In order to be a useful measure for analyzing the worst case runtime of algorithms, we have come to the following idea for an function <m>f(n)</m> being an asymptotic upper bound for a function <m>T(n)</m>:   
+  </p>
+
+  <insight>
+    <p>
+      For large enough inputs sizes <m>n</m>, <m>T(n)</m> is less than or equal to <m>f(n)</m> (times some constant). 
+    </p>
+  </insight>
+
+  <p>We translate this idea into a formal mathematical definition with the following.
+  </p>
+
+  <definition xml:id="def-bigO">
+    <statement>
+      <p>
+          Let <m>T(n)</m> be a function, and let <m>f(n)</m> be another function. We say that <m>T(n)</m> <term>is order</term> <m>f(n)</m>, written <m>T(n)=O(f(n))</m>, if there exist constants <m>c \gt 0</m> and <m>n_0\geq 0</m> such that for every integer <m>n\geq n_0</m>, <m>T(n)\leq c\cdot f(n)</m>.
+      </p>
+      <p>
+          When <m>T(n)=O(f(n))</m>, we say that <m>f(n)</m> is an <term>asymptotic upper bound for</term> <m>T(n)</m>.
+      </p>
+    </statement>
+  </definition>
+  
 
 </section>
