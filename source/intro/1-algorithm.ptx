@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-1-1-algorithm" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="intro-1-algorithm" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>What is an Algorithm?</title>
 
   <p>You have probably heard the term "algorithm" before, likely in the context of computer programming, problem solving, or artificial intelligence. Algorithms appear in many different places, and in many different forms. However, at the most basic level, an algorithm is just a sequence of steps for completing some task.

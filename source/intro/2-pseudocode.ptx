@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="intro-2-pseudocode" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Pseudocode</title>
+
+  <p>In the block below, we provide <em>high-level pseudocode</em> for merge sort. </p>
+
+  <program>
+    merge sort
+
+    input: array of integers
+    state change: array of integers sorted into ascending order
+
+    call merge sort on the first half of the array
+    call merge sort on the second half of the array
+
+    merge the two halves
+  </program>
+
+  <p>Although the high-level pseudocode communicates the basic idea and structure of merge sort, it lacks details that are important for implementing merge sort in a programming language. In particular,
+    <ul>
+      <li>
+        <p>
+          How are the first half and second half of the array passed recursively to merge sort? Do we make copies of these to pass, or do we specify the indices to consider from the array? Note that this will affect the parameters of the merge sort function.
+        </p>
+      </li>
+      <li>
+        <p>
+          There are no details on how the merge step is performed.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>By writing lower-level pseudocode, we can more clearly communicate the implementation details of an algorithm, making it easier to translate into a programming language. Let's look at low-level pseudocode for merge sort. Here, we make a copy of the first half and second half of the array to pass recursively.</p>
+
+  <program>
+    merge sort
+
+    input: array of integers
+    state change: array of integers sorted into ascending order
+
+    missing
+  </program>
+</section>

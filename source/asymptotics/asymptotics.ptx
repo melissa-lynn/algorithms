@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="asymptotics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Asymptotics</title>
+
+  <introduction>
+    <p> After this chapter, you will be able to: 
+      <ul>
+        <li>
+          <p>
+            Explain the tradeoffs of analyzing runtime experimentally vs. asymptotically.
+          </p>
+        </li>
+        <li>
+          <p>
+            Provide a formal definition of "big O".
+          </p>
+        </li>
+        <li>
+          <p>
+            Explain the idea behind the definition of "big O".
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that a given function is order another function.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that a given function is not order another function.
+          </p>
+        </li>
+        <li>
+          <p>
+            Given pseudocode for an algorithm, analyze its asymptotic runtime.
+          </p>
+        </li>
+        <li>
+          <p>
+            Group functions by their complexity classes.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Master Theorem to find the asymptotic runtime of a recursive function.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="1-motivation.ptx" />
+  <xi:include href="2-formal_defs.ptx" />
+  <xi:include href="3-intuition.ptx" />
+  <xi:include href="4-proofs.ptx" />
+  <xi:include href="5-not_proofs.ptx" />
+  <xi:include href="6-properties.ptx" />
+  <xi:include href="7-more_proofs.ptx" />
+  <xi:include href="8-analyzing_algs.ptx" />
+  <xi:include href="9-more_analyzing.ptx" />
+  <xi:include href="10-complexity_classes.ptx" />
+  <xi:include href="11-master_thm.ptx" />
+
+</chapter>
