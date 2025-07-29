@@ -3,6 +3,83 @@
 <section xml:id="asymptotics-5-not_proofs" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Proving <m>T(n)</m> is not <m>O(f(n))</m></title>
 
-  <p>Text</p>
+  <p>Next, we'll consider how to prove that a function <m>T(n)</m> is <em>not</em> order another function <m>f(n)</m>. To do this, we'll use <em>negate</em> the definition of order. This definition is repeated below.</p>
+
+  <definition>
+    <statement>
+      <p>
+          Let <m>T(n)</m> be a function, and let <m>f(n)</m> be another function. We say that <m>T(n)</m> <term>is order</term> <m>f(n)</m>, written <m>T(n)=O(f(n))</m>, if there exist constants <m>c \gt 0</m> and <m>n_0\geq 0</m> such that for every integer <m>n\geq n_0</m>, <m>T(n)\leq c\cdot f(n)</m>.
+      </p>
+      <p>
+          When <m>T(n)=O(f(n))</m>, we say that <m>f(n)</m> is an <term>asymptotic upper bound for</term> <m>T(n)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>We will negate this definition, rewriting it in a form that will be useful for proofs. Directly from the definition above, we have the following.</p>
+
+  <blockquote>
+    <p>
+      <m>T(n)</m> is not order <m>f(n)</m> if it is not true that there exist constants <m>c \gt 0</m> and <m>n_0\geq 0</m> such that for every integer <m>n\geq n_0</m>, <m>T(n)\leq c\cdot f(n)</m>.
+    </p>
+  </blockquote>
+
+  <p>This statement is a bit convoluted, so we'll rewrite it to be easier to interpret. Saying that <q>it is not true that there exist constants satisfying a condition</q> is equivalent to saying that <q>for all constants the condition is false</q>. We use this idea to rewrite the definition equivalently as follows.</p>
+
+  <blockquote>
+    <p>
+      <m>T(n)</m> is not order <m>f(n)</m> if for all constants <m>c \gt 0</m> and <m>n_0\geq 0</m> it is not true that for every integer <m>n\geq n_0</m>, <m>T(n)\leq c\cdot f(n)</m>.
+    </p>
+  </blockquote>
+
+  <p>Now, saying that <q>it is not true that for every integer <m>n\geq n_0</m> a condition is true</q> is equivalent to saying <q>there exists some integer <m>n\geq n_0</m> such that the condition is false</q>. Rewriting the definition again, we have the following equivalent statement.</p>
+
+  <blockquote>
+    <p>
+      <m>T(n)</m> is not order <m>f(n)</m> if for any constants <m>c \gt 0</m> and <m>n_0\geq 0</m> there exists some integer <m>n\geq n_0</m> such that <m>T(n)\leq c\cdot f(n)</m> is false.
+    </p>
+  </blockquote>
+
+  <p>Finally, saying that <q><m>T(n)\leq c\cdot f(n)</m> is false</q> is equivalent to saying that <q><m>T(n)\gt c\cdot f(n)</m></q>. This brings us to the following equivalent definition, which will be useful for proving directly that a function <m>T(n)</m> is not order a function <m>f(n)</m>.
+  </p>
+
+  <definition xml:id="def-notbigO">
+    <statement>
+      <p>
+          Let <m>T(n)</m> be a function, and let <m>f(n)</m> be another function. We say that <m>T(n)</m> <term>is not order</term> <m>f(n)</m> if for every choice of constants <m>c \gt 0</m> and <m>n_0\geq 0</m>, there exists some integer <m>n\geq n_0</m> such that <m>T(n)\gt c\cdot f(n)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <aside>
+    <p>
+      Why not a proof by contradiction?
+    </p>
+  </aside>
+
+  <p>The remainder of this section consists of examples of proving that a function <m>T(n)</m> is not order another function <m>f(n)</m>.</p>
+
+  <claim>
+    <statement>
+      <p>
+        <m>n^2</m> is not order <m>n</m>.
+      </p>
+    </statement>
+  </claim>
+
+  <proof>
+    <p>
+      We will show that for any constants <m>c \gt 0</m> and <m>n_0\geq 0</m>, there exists some integer <m>n\geq n_0</m> such that <m>n^2\gt cn</m>.
+    </p>
+    <p>
+      Suppose we have constants <m>c \gt 0</m> and <m>n_0\geq 0</m>. Choose <me>n=\max\{n_0, c+1\}.</me> Then <m>n\geq n_0</m>, and
+      <md>
+        <mrow>n^2 \amp =n\cdot n, \amp\amp</mrow>
+        <mrow>\amp \geq (c+1)n \amp\amp \text{ because }n\geq c+1,</mrow>
+        <mrow>\amp \gt cn \amp\amp \text{ because }c+1\gt c\text{ and }n\geq c+1\gt 0.</mrow>
+      </md>
+      This shows that there exists <m>n\geq n_0</m> such that <m>n^2\gt cn</m>, proving that <m>n^2</m> is not order <m>n</m>.
+    </p>
+  </proof>
 
 </section>
