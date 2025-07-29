@@ -97,7 +97,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Proving <span class=\"process-math\">\\(T(n)=O(f(n))\\)<\/span>",
-  "body": " Proving       Translating this statement into the formal definition, we need to prove that for functions and , there exist and such that if , then . In other words, if , then .  Based on our previous investigation, there are various choices for and that could work here. One such choice is  Now, we are ready to write our formal proof.   We will show that there exist integers and such that if , then .  Let and . Then, if , we have: Thus, we have , proving that    "
+  "body": " Proving       Translating this statement into the formal definition, we need to prove that for functions and , there exist and such that if , then . In other words, if , then .  Based on our previous investigation, there are various choices for and that could work here. One such choice is and .  Now, let's write our formal proof.   We will show that there exist integers and such that if , then .  Let and . Then, if , we have: Thus, we have , proving that    "
 },
 {
   "id": "asymptotics-4-proofs-2",
@@ -124,7 +124,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Proving <span class=\"process-math\">\\(T(n)\\)<\/span> is not <span class=\"process-math\">\\(O(f(n))\\)<\/span>",
-  "body": " Proving is not  Text  "
+  "body": " Proving is not  Next, we'll consider how to prove that a function is not order another function . To do this, we'll use negate the definition of order. This definition is repeated below.    Let be a function, and let be another function. We say that  is order  , written , if there exist constants and such that for every integer , .  When , we say that is an asymptotic upper bound for  .    We will negate this definition, rewriting it in a form that will be useful for proofs. Directly from the definition above, we have the following.    is not order if it is not true that there exist constants and such that for every integer , .   This statement is a bit convoluted, so we'll rewrite it to be easier to interpret. Saying that it is not true that there exist constants satisfying a condition is equivalent to saying that for all constants the condition is false . We use this idea to rewrite the definition equivalently as follows.    is not order if for all constants and it is not true that for every integer , .   Now, saying that it is not true that for every integer a condition is true is equivalent to saying there exists some integer such that the condition is false . Rewriting the definition again, we have the following equivalent statement.    is not order if for any constants and there exists some integer such that is false.   Finally, saying that is false is equivalent to saying that . This brings us to the following equivalent definition, which will be useful for proving directly that a function is not order a function .    Let be a function, and let be another function. We say that  is not order  if for every choice of constants and , there exists some integer such that .     Why not a proof by contradiction?   The remainder of this section consists of examples of proving that a function is not order another function .     is not order .     We will show that for any constants and , there exists some integer such that .  Suppose we have constants and . Choose Then , and This shows that there exists such that , proving that is not order .   "
+},
+{
+  "id": "asymptotics-5-not_proofs-3",
+  "level": "2",
+  "url": "asymptotics-5-not_proofs.html#asymptotics-5-not_proofs-3",
+  "type": "Definition",
+  "number": "2.5.1",
+  "title": "",
+  "body": "  Let be a function, and let be another function. We say that  is order  , written , if there exist constants and such that for every integer , .  When , we say that is an asymptotic upper bound for  .   "
+},
+{
+  "id": "def-notbigO",
+  "level": "2",
+  "url": "asymptotics-5-not_proofs.html#def-notbigO",
+  "type": "Definition",
+  "number": "2.5.2",
+  "title": "",
+  "body": "  Let be a function, and let be another function. We say that  is not order  if for every choice of constants and , there exists some integer such that .   "
+},
+{
+  "id": "asymptotics-5-not_proofs-14",
+  "level": "2",
+  "url": "asymptotics-5-not_proofs.html#asymptotics-5-not_proofs-14",
+  "type": "Claim",
+  "number": "2.5.3",
+  "title": "",
+  "body": "   is not order .   "
+},
+{
+  "id": "asymptotics-5-not_proofs-15",
+  "level": "2",
+  "url": "asymptotics-5-not_proofs.html#asymptotics-5-not_proofs-15",
+  "type": "Proof",
+  "number": "2.5.1",
+  "title": "",
+  "body": " We will show that for any constants and , there exists some integer such that .  Suppose we have constants and . Choose Then , and This shows that there exists such that , proving that is not order .  "
 },
 {
   "id": "asymptotics-6-properties",
