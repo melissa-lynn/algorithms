@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="asymptotics-6-properties" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Title</title>
+  <title>Properties</title>
 
-  <p>Text</p>
+  <p>In this section, we'll introduce and prove some general properties about <q>big O</q>. These properties are useful to determine the asymptotic behavior of functions, without needing to resort to a proof from the definition.</p>
+
+  <p>If you've been thinking about asymptotics and practicing your proofs, you've probably already made the following observation: the asymptotic behavior of a polynomial function is determined by the degree of its highest degree term. This is restated in the claim below.</p>
+  
+  <claim xml:id="claim-polydeg">
+    <statement>
+      <p>
+        If <m>f(n)=a_dn^d+a_{d-1}n^{d-1}+\cdots +a_2n^2+a_1n+a_0</m> is a polynomial of degree <m>d</m>, then <m>f(n) = O(n^d)</m>.
+      </p>
+    </statement>
+  </claim>
+
+  <proof>
+    <p>
+      needs proof
+    </p>
+  </proof>
 
 </section>

@@ -33,4 +33,27 @@
     </p>
   </proof>
 
+  <claim>
+    <statement>
+      <p>
+        <m>n^2+2n+5=O(n^2)</m>
+      </p>
+    </statement>
+  </claim>
+
+  <proof>
+    <p>We will prove that there exists integers <m>n_0\geq 0</m> and <m>c\gt 0</m> such that if <m>n\geq n_0</m>, then <m>n^2+2n+5\leq cn^2</m>.</p>
+    <p>
+      Choose <m>n_0=1</m> and <m>c=8</m>. Then, for every integer <m>n\geq n_0</m>, we have
+      <md>
+        <mrow>n^2+2n+5 \amp \leq n^2+2n\cdot n+5\cdot n^2 \amp\amp \text{because }n\geq n_0 = 1</mrow>
+        <mrow>\amp =n^2+2n^2+5n^2 \amp\amp</mrow>
+        <mrow>\amp =8n^2 \amp\amp</mrow>
+        <mrow>\amp =cn^2 \amp\amp \text{because }c=8</mrow>
+      </md>
+    </p>
+    <p>Thus, we have shown that <m>n^2+2n+5\leq cn^2</m> for all <m>n\geq n_0</m> when <m>n_0=1</m> and <m>c=8</m>, proving that <m>n^2+2n+5=O(n^2)</m></p>
+  </proof>
+
+
 </section>
