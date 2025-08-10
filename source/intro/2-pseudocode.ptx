@@ -35,11 +35,64 @@
   <p>By writing lower-level pseudocode, we can more clearly communicate the implementation details of an algorithm, making it easier to translate into a programming language. Let's look at low-level pseudocode for merge sort. Here, we make a copy of the first half and second half of the array to pass recursively.</p>
 
   <program>
+    merge_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    call merge_sort_helper on array, 0, n-1
+    return
+
+    merge_sort_helper
+
+    input:array of integers of length n, start_index, stop_index
+    state change: sorts the integers from start_index through stop_index into ascending order
+
+    if start_index \geq stop_index:
+      return
+
+    call merge_sort_helper on array, start_index, (start_index+stop_index)//2
+    call merge_sort_helper on array, (start_index+stop_index)//2 + 1, stop_index
+
+    new_array is initialized as an empty array
+    i gets start_index
+    j gets (start_index+stop_index)//2 + 1
+    k gets 0
+
+    while i \leq (start_index+stop_index)//2 and j \leq stop_index:
+      if array[i] \leq array[j]:
+        new_array[k] gets array[i]
+        i gets i+1
+        k gets k+1
+      else:
+        new_array[k] gets array[j]
+        j gets j+1
+        k gets k+1
+    
+    while i \leq (start_index+stop_index)//2:
+      new_array[k] gets array[i]
+      i gets i+1
+      k gets k+1
+
+    while j \leq stop_index:
+      new_array[k] gets array[j]
+      j gets j+1
+      k gets k+1
+
+    for k from 0 through stop_index-start_index+1:
+      array[start_index+k] gets new_array[k]
+
+    return
+  </program>
+
+  <p>This highly detailed version of the pseudocode would be very easy to implement in a programming language; it basically translates line by line into code. However, this does have a drawback: the core idea of the algorithm isn't very clear from the detailed pseudocode. In particular, it isn't immediately obvious what the last few while loops are doing. To make the algorithm itself more clear, we offer the following compromise: pseudocode that is detailed enough to be translated into a programming language (with a bit of effort by the programmer), without getting too bogged down in the actual implementation details).</p>
+
+  <program>
     merge sort
 
     input: array of integers
     state change: array of integers sorted into ascending order
 
-    missing
+    TO DO
   </program>
 </section>
