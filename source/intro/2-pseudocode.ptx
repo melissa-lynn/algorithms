@@ -85,14 +85,41 @@
     return
   </program>
 
-  <p>This highly detailed version of the pseudocode would be very easy to implement in a programming language; it basically translates line by line into code. However, this does have a drawback: the core idea of the algorithm isn't very clear from the detailed pseudocode. In particular, it isn't immediately obvious what the last few while loops are doing. To make the algorithm itself more clear, we offer the following compromise: pseudocode that is detailed enough to be translated into a programming language (with a bit of effort by the programmer), without getting too bogged down in the actual implementation details).</p>
+  <p>This highly detailed version of the pseudocode would be very easy to implement in a programming language; it basically translates line by line into code. However, this does have a drawback: the core idea of the algorithm isn't very clear from the detailed pseudocode. In particular, it isn't immediately obvious what the last few while loops are doing. To make the algorithm itself more clear, we offer the following compromise: pseudocode that is detailed enough to be translated into a programming language (with a bit of effort by the programmer), without getting too bogged down in the actual implementation details). The following pseudocode provides an example of this.</p>
 
   <program>
-    merge sort
+    merge_sort
 
-    input: array of integers
+    input: array of integers of length n
     state change: array of integers sorted into ascending order
 
-    TO DO
+    if the length of the array is 0 or 1:
+      return
+
+    call merge_sort to sort the first half of array
+    call merge_sort to sort the second half of the array
+
+    new_array is initialized as an empty array
+
+    iterate through the first half and second half of the array simultaneously
+      if the current item in the first half is less than the current item in the second half:
+        append the current item from the first half to new_array
+        go to the next item in the first half
+      else:
+        append the current item from the second half to new_array
+        go to the next item in the second half
+
+    if there are remaining items in the first half of the array:
+      append them to new_array
+
+    if there are remaining items in the second half of the array:
+      append them to new_array
+    
+    copy new_array into the original array
+
+    return
   </program>
+
+  <p>This pseudocode most clearly communicates the idea of the algorithm, and provides enough detail to get someone started with implementation. This is the level of pseudocode that we will typically strive for.</p>
+
 </section>
