@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-6-tree_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Tree Sort</title>
+
+  <p>Tree sort works by inserting all items in a binary search tree, then performing an in-order traversal of the tree to extract the items in increasing order.</p>
+
+    <program>
+    tree_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    tree is an empty binary search tree
+
+    for each item in the array:
+      insert the item in the tree
+
+    traversing the tree in order, copy the items back into the array
+
+    return
+  </program>
+
+</section>

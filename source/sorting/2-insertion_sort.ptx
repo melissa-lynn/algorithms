@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-2-insertion_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Insertion Sort</title>
+
+  <p>Insertion sort works by sorting the array from the beginning, adding one item at a time by finding its correct position in the sorted portion of the array.</p>
+
+  <program>
+    insertion_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    for each position in the array:
+      current is the item at the current position
+      while current is less than the item in the previous position:
+        swap current with that item
+
+    return
+  </program>  
+
+</section>

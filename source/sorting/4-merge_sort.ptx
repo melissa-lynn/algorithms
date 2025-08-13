@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-4-merge_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Merge Sort</title>
+
+  <p>Merge sort works by dividing the array into its first half and second half, sorting each half, then merging the two halves resulting in a sorted array.</p>
+
+
+  <program>
+    merge_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    if the length of the array is 0 or 1:
+      return
+
+    call merge_sort to sort the first half of array
+    call merge_sort to sort the second half of the array
+
+    new_array is initialized as an empty array
+
+    iterate through the first half and second half of the array simultaneously
+      if the current item in the first half is less than the current item in the second half:
+        append the current item from the first half to new_array
+        go to the next item in the first half
+      else:
+        append the current item from the second half to new_array
+        go to the next item in the second half
+
+    if there are remaining items in the first half of the array:
+      append them to new_array
+
+    if there are remaining items in the second half of the array:
+      append them to new_array
+    
+    copy new_array into the original array
+
+    return
+  </program>
+
+</section>

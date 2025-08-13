@@ -3,6 +3,78 @@
 <section xml:id="intro-3-evaluation" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Evaluating an Algorithm</title>
 
-  <p> Text of section. </p>
+  <p>Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We've seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.</p>
+
+  <program>
+    selection_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    for each position in the array:
+      find the smallest item in the array, at or after the current position
+      swap the item at the current position with the item just found
+
+    return
+  </program>
+
+  <p>We could also propose the following algorithm, random sort, to sort an array.</p>
+
+  <program>
+    random_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    while the items in the array are not in order:
+      shuffle the items into a random order
+
+    return
+  </program>
+
+  <p>We now have three different different algorithms for sorting an array, but which one is best? To answer this question, we need some idea of what makes an algorithm <q>good</q> in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on <em>correctness</em> and <em>efficiency</em></p>
+
+  <principle xml:id="principle-correctness">
+    <title>Correctness</title>
+    <statement>
+      <p>
+        Does the algorithm always give correct results? If not, how often does it give correct results, and how close to correct are the results?
+      </p>
+    </statement>
+  </principle>
+
+  <p>To evaluate the correctness of an algorithm, we typically adopt one of the following two approaches.
+    <ul>
+      <li>
+        <p>
+          Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and test cases can be useful in developing the algorithm itself.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove mathematically that the algorithm does what is expected. The benefit of this approach is that if you have a rigorous proof, you can be certain your algorithm is correct. The challenge is that writing and communicating these proofs can be difficult, and in some cases test cases may provide more compelling evidence that an algorithm works as intended.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>For sorting algorithms: test cases and proofs of correctness.</p>
+
+  <principle xml:id="principle-efficiency">
+    <title>Efficiency</title>
+    <statement>
+      <p>
+        What are the resource requirements of the algorithm? In particular, how long does the algorithm take to run (<em>time efficiency</em>), and how much memory does the algorithm require (<em>space efficiency</em>)? We are especially concerned with <em>scalability</em> (how well the algorithm works on very large inputs).
+      </p>
+    </statement>
+  </principle>
+
+  <p>To evaluate the time efficiency of an algorithm with an emphasis on scalability, we could run an implementation of the algorithm on inputs of various sizes, and time how long the algorithm takes to run. However, this approach has significant drawbacks. The time an algorithm takes to run may vary significantly depending on the power of the computer used, or on the programming language used to implement the algorithm. With this approach, to compare the time efficiency of two algorithms, we would need to be sure to implement them in the same programming language and run them on the same computer. It would be preferable to have an approach that measures the time efficiency intrinsic to an algorithm, without depending on a specific language or hardware.</p>
+
+  <p>Similarly, to evaluate the space efficiency of an algorithm, we could track the memory usage of the algorithm for inputs of various sizes. Again, this could depend on the programming language used, and the type of memory used could depend on the hardware configuration (for example, if the algorithm fills up the cache). As with time efficiency, we would like to be able to evaluate the space requirements of an algorithm without focusing on a specific implementation.</p>
+
+  <p>In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the <q>big O</q> of an algorithm.</p>
+
+  <p>For sorting algorithms: analysis of time and space efficiency.</p>
 
 </section>

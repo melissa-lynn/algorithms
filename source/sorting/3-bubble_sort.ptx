@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-3-bubble_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bubble Sort</title>
+
+  <p>Bubble sort works by iterating through the array, swapping pairs of items that are out of order. It repeats this iteration until the entire array is in order.</p>
+
+  <program>
+    bubble_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    while there was a swap in the previous iteration:
+      for each position in the array:
+        if the next item is less than the current item:
+          swap the current item with the next item
+
+    return
+  </program> 
+
+</section>

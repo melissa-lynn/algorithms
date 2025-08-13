@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-1-selection_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Selection Sort</title>
+
+  <p>Selection sort works by repeatedly finding the next smallest item in the array, and moving it into the correct position. Here is pseudocode for selection sort.</p>
+
+  <program>
+    selection_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    for each position in the array:
+      find the smallest item in the array, at or after the current position
+      swap the item at the current position with the item just found
+
+    return
+  </program>
+
+</section>

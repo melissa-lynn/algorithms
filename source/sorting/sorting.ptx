@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="sorting" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sorting Algorithms</title>
+
+  <introduction>
+    <p> After this chapter, you will be able to explain, write pseudocode, and analyze the following sorting algorithms: 
+      <ul>
+        <li>
+          <p>
+            Selection Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Insertion Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Bubble Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Merge Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Quick Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Tree Sort
+          </p>
+        </li>
+        <li>
+          <p>
+            Heap Sort
+          </p>
+        </li>
+      </ul>
+    </p>
+
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="1-selection_sort.ptx" />
+  <xi:include href="2-insertion_sort.ptx" />
+  <xi:include href="3-bubble_sort.ptx" />
+  <xi:include href="4-merge_sort.ptx" />
+  <xi:include href="5-quick_sort.ptx" />
+  <xi:include href="6-tree_sort.ptx" />
+  <xi:include href="7-heap_sort.ptx" />
+
+</chapter>

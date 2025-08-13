@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sorting-5-quick_sort" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quick Sort</title>
+
+  <p>Quick Sort works by choosing an item from the array, called the pivot. The array is reordered so that every item before the pivot is less than the pivot, and every item after the pivot is greater than the pivot. Then, the portion of the array before the pivot is sorted, and the portion of the array after the pivot is sorted, resulting in a sorted array.</p>
+
+  <program>
+    quick_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    the pivot is the last item in the array
+
+    for each position in the array:
+      if the current item is less than the pivot:
+        swap it with the first item that is greater than the pivot
+
+    swap the pivot with the first item that is greater than the pivot
+
+    call quick_sort on the portion of the array before the pivot
+    call quick_sort on the portion of the array after the pivot
+
+    return
+  </program>
+
+</section>

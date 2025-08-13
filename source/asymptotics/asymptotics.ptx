@@ -63,6 +63,6 @@
   <xi:include href="8-analyzing_algs.ptx" />
   <xi:include href="9-more_analyzing.ptx" />
   <xi:include href="10-complexity_classes.ptx" />
-  <xi:include href="11-master_thm.ptx" />
+  <!-- <xi:include href="11-master_thm.ptx" /> -->
 
 </chapter>
