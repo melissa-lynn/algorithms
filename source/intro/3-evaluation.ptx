@@ -3,7 +3,42 @@
 <section xml:id="intro-3-evaluation" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Evaluating an Algorithm</title>
 
-  <p>Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We've seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.</p>
+  <p>Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We've seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. We repeat the pseudocode for merge sort here.</p>
+  
+  <program>
+    merge_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    if the length of the array is 0 or 1:
+      return
+
+    call merge_sort to sort the first half of array
+    call merge_sort to sort the second half of the array
+
+    new_array is initialized as an empty array
+
+    iterate through the first half and second half of the array simultaneously
+      if the current item in the first half is less than the current item in the second half:
+        append the current item from the first half to new_array
+        go to the next item in the first half
+      else:
+        append the current item from the second half to new_array
+        go to the next item in the second half
+
+    if there are remaining items in the first half of the array:
+      append them to new_array
+
+    if there are remaining items in the second half of the array:
+      append them to new_array
+    
+    copy new_array into the original array
+
+    return
+  </program>
+  
+  <p>Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.</p>
 
   <program>
     selection_sort
@@ -18,21 +53,7 @@
     return
   </program>
 
-  <p>We could also propose the following algorithm, random sort, to sort an array.</p>
-
-  <program>
-    random_sort
-
-    input: array of integers of length n
-    state change: array of integers sorted into ascending order
-
-    while the items in the array are not in order:
-      shuffle the items into a random order
-
-    return
-  </program>
-
-  <p>We now have three different different algorithms for sorting an array, but which one is best? To answer this question, we need some idea of what makes an algorithm <q>good</q> in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on <em>correctness</em> and <em>efficiency</em></p>
+  <p>We now have two different different algorithms for sorting an array, but which one is better? To answer this question, we need some idea of what makes an algorithm <q>good</q> in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on <em>correctness</em> and <em>efficiency</em></p>
 
   <principle xml:id="principle-correctness">
     <title>Correctness</title>
@@ -47,7 +68,7 @@
     <ul>
       <li>
         <p>
-          Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and test cases can be useful in developing the algorithm itself.
+          Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and they can be used to evaluate any algorithm accomplishing the same task. Test cases can also be useful in developing the algorithm itself.
         </p>
       </li>
       <li>
@@ -59,6 +80,27 @@
   </p>
 
   <p>For sorting algorithms: test cases and proofs of correctness.</p>
+
+  <example>
+    <title>Test Cases for Sorting Algorithms</title>
+    <statement>
+      <p>Discussion of test cases</p>
+    </statement>
+  </example>
+
+  <example>
+    <title>Proof of Correctness of Merge Sort</title>
+    <statement>
+      <p>Proof</p>
+    </statement>
+  </example>
+
+  <example>
+    <title>Proof of Correctness of Selection Sort</title>
+    <statement>
+      <p>Discussion of test cases</p>
+    </statement>
+  </example>
 
   <principle xml:id="principle-efficiency">
     <title>Efficiency</title>
@@ -75,6 +117,32 @@
 
   <p>In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the <q>big O</q> of an algorithm.</p>
 
-  <p>For sorting algorithms: analysis of time and space efficiency.</p>
+  <example>
+    <title>Timing Sorting Algorithms</title>
+    <statement>
+      <p>Discussion of timing experiment</p>
+    </statement>
+  </example>
+
+  <example>
+    <title>Measuring Memory Use of Sorting Algorithms</title>
+    <statement>
+      <p>Discussion of memory analysis</p>
+    </statement>
+  </example>
+
+  <example>
+    <title>Runtime Analysis of Merge Sort</title>
+    <statement>
+      <p>Not sure if this should be included here</p>
+    </statement>
+  </example>
+
+  <example>
+    <title>Runtime Analysis of Selection Sort</title>
+    <statement>
+      <p>Not sure if this should be included here</p>
+    </statement>
+  </example>
 
 </section>
