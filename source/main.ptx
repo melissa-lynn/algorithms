@@ -15,6 +15,7 @@
     <xi:include href="./intro/intro.ptx" />
     <xi:include href="./asymptotics/asymptotics.ptx" />
     <xi:include href="./sorting/sorting.ptx" />
+    <xi:include href="./graphs/graphs.ptx" />
 
 
     <!-- Include backmatter -->

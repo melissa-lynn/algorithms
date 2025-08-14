@@ -1,0 +1,81 @@
+<p>Adjacency matrix: <matrixInput name="userMatrix" numRows="3" numColumns="3" showSizeControls="false" defaultEntry="0"/>
+<answer>
+  <award>
+    <when>
+      $userMatrix = $answerMatrix
+    </when>
+  </award>
+</answer>
+</p>
+
+<matrix name="answerMatrix" hide>
+  <row>0 0 1</row>
+  <row>0 0 1</row>
+  <row>1 1 0</row>
+</matrix>
+
+<sideBySide>
+
+<graph name="userGraph" displayXAxis="false" displayYAxis="false" showNavigation="false" showBorder="false">
+  <text anchor="(0,9)">Your Graph</text>
+  <map name="userNodes">
+    <template>
+      <point draggable="false">(7 cos($i*2pi/$numNodes), 7 sin($i*2pi/$numNodes))
+        <label><m>$i</m></label>
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+  <map>
+    <template>
+      <map>
+        <template>
+          <conditionalContent condition="$userMatrix.matrix[$i][$j]=1">
+            <lineSegment endpoints="$userNodes[$i] $userNodes[$j]" draggable="false"/>
+          </conditionalContent>
+        </template>
+        <sources alias="j">
+          <sequence from="1" to="$numNodes" step="1"/>
+        </sources>
+      </map>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+</graph>
+
+<graph name="answerGraph" displayXAxis="false" displayYAxis="false" showNavigation="false" showBorder="false">
+  <text anchor="(0,9)">Answer Graph</text>
+  <map name="answerNodes">
+    <template>
+      <point draggable="false">(7 cos($i*2pi/$numNodes), 7 sin($i*2pi/$numNodes))
+        <label><m>$i</m></label>
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+  <map>
+    <template>
+      <map>
+        <template>
+          <conditionalContent condition="$answerMatrix.matrix[$i][$j]=1">
+            <lineSegment endpoints="$answerNodes[$i] $answerNodes[$j]" draggable="false"/>
+          </conditionalContent>
+        </template>
+        <sources alias="j">
+          <sequence from="1" to="$i" step="1"/>
+        </sources>
+      </map>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+</graph>
+
+</sideBySide>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="graphs-2-representations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Graph Representations</title>
+
+  <p>Text</p>
+
+  <interactive label="adj_matrix" platform="doenetml" width="100%" aspect="2:8">
+  <slate surface="doenetml">
+    <xi:include parse="text" href="doenet/adj_matrix.doenetml"/> 
+  </slate>
+</interactive>
+
+</section>

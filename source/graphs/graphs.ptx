@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Graphs</title>
+
+  <introduction>
+    <p> After this chapter, you will be able to: 
+      <ul>
+        <li>
+          <p>
+            Do stuff with graphs.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="1-definitions.ptx" />
+  <xi:include href="2-representations.ptx" />
+  <xi:include href="3-searching.ptx" />
+  <xi:include href="4-shortest_paths.ptx" />
+  <xi:include href="5-weighted.ptx" />
+  <xi:include href="6-dijkstra.ptx" />
+  <xi:include href="7-directed.ptx" />
+  <xi:include href="8-topological_ordering.ptx" />
+  <xi:include href="9-prim.ptx" />
+  <xi:include href="10-ford_fulkerson.ptx" />
+
+</chapter>
