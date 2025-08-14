@@ -21,4 +21,39 @@
     return
   </program>
 
+  <p>Here is more detailed pseudocode for tree sort.</p>
+
+  <program>
+    tree_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    tree is an empty binary search tree
+
+    for each item in the array:
+      insert the item in the tree
+
+    call tree_sort_helper on the root of the tree, array, 0
+
+    return
+
+    tree_sort_helper(tree_node, array, index)
+
+    input: node in a tree, array, index
+    state_change: all descendents of the node are copied into array in ascending order starting at index, index is updated to the end of the copied portion
+
+    if tree_node is empty:
+      return
+    
+    call tree_sort_helper on the left child of tree_node, array, index
+    array[index] gets the data at tree_node
+    index gets index + 1
+    call tree_sort_helper on the right child of tree_node, array, index
+
+    return
+  </program>
+
+
+
 </section>

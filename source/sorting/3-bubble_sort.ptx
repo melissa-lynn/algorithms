@@ -19,4 +19,43 @@
     return
   </program> 
 
+  <p>Here is more detailed pseudocode.</p>
+
+  <program>
+    bubble_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    num_swaps gets 1
+    while num_swaps \gt 0:
+      num_swaps gets 0
+      for i from 0 to n-1:
+        if array[i+1] \lt array[i]:
+          swap array[i] and array[i+1]
+          num_swaps += 1
+
+    return
+  </program> 
+
+  <p>Here is another version of bubble sort.</p>
+
+  <program>
+    bubble_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    for r from 1 to n:
+      num_swaps gets 0
+      for i from 0 to n-r:
+        if array[i+1] \lt array[i]:
+          swap array[i] and array[i+1]
+          num_swaps += 1
+      if num_swaps = 0:
+        break
+
+    return
+  </program>
+
 </section>

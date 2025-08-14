@@ -18,4 +18,22 @@
     return
   </program>
 
+  <p>Here is more detailed pseudocode, that we will use for our runtime analysis. This pseudocode also makes it straightforward to implement the algorithm in many programming languages.</p>
+
+  <program>
+    selection_sort
+
+    input: array of integers of length n
+    state change: array of integers sorted into ascending order
+
+    for i from 0 to n:
+      min_index gets 0
+      for j from i to n:
+        if array[j] \lt array[min_index]:
+          min_index gets j
+      swap array[i] and array[min_index]
+
+    return
+  </program>
+
 </section>
