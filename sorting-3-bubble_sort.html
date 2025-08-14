@@ -210,6 +210,41 @@ while there was a swap in the previous iteration:
 
 return
 </code></pre></div>
+<div class="para" id="sorting-3-bubble_sort-4">Here is more detailed pseudocode.<div class="autopermalink" data-description="Paragraph"><a href="#sorting-3-bubble_sort-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program"><code class="language-none">bubble_sort
+
+input: array of integers of length n
+state change: array of integers sorted into ascending order
+
+num_swaps gets 1
+while num_swaps \gt 0:
+  num_swaps gets 0
+  for i from 0 to n-1:
+    if array[i+1] \lt array[i]:
+      swap array[i] and array[i+1]
+      num_swaps += 1
+
+return
+</code></pre></div>
+<div class="para" id="sorting-3-bubble_sort-6">Here is another version of bubble sort.<div class="autopermalink" data-description="Paragraph"><a href="#sorting-3-bubble_sort-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program"><code class="language-none">bubble_sort
+
+input: array of integers of length n
+state change: array of integers sorted into ascending order
+
+for r from 1 to n:
+  num_swaps gets 0
+  for i from 0 to n-r:
+    if array[i+1] \lt array[i]:
+      swap array[i] and array[i+1]
+      num_swaps += 1
+  if num_swaps = 0:
+    break
+
+return
+</code></pre></div>
 <div class="autopermalink" data-description="Section 3.3: Bubble Sort"><a href="#sorting-3-bubble_sort" title="Copy heading and permalink for Section 3.3: Bubble Sort">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sorting-2-insertion_sort.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sorting-4-merge_sort.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

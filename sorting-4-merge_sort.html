@@ -229,6 +229,57 @@ copy new_array into the original array
 
 return
 </code></pre></div>
+<div class="para" id="sorting-4-merge_sort-4">Here is more detailed pseudocode for merge sort.<div class="autopermalink" data-description="Paragraph"><a href="#sorting-4-merge_sort-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program"><code class="language-none">merge_sort
+
+input: array of integers of length n
+state change: array of integers sorted into ascending order
+
+call merge_sort_helper on array, 0, n-1
+return
+
+merge_sort_helper
+
+input:array of integers of length n, start_index, stop_index
+state change: sorts the integers from start_index through stop_index into ascending order
+
+if start_index \geq stop_index:
+  return
+
+call merge_sort_helper on array, start_index, (start_index+stop_index)//2
+call merge_sort_helper on array, (start_index+stop_index)//2 + 1, stop_index
+
+new_array is initialized as an empty array
+i gets start_index
+j gets (start_index+stop_index)//2 + 1
+k gets 0
+
+while i \leq (start_index+stop_index)//2 and j \leq stop_index:
+  if array[i] \leq array[j]:
+    new_array[k] gets array[i]
+    i gets i+1
+    k gets k+1
+  else:
+    new_array[k] gets array[j]
+    j gets j+1
+    k gets k+1
+
+while i \leq (start_index+stop_index)//2:
+  new_array[k] gets array[i]
+  i gets i+1
+  k gets k+1
+
+while j \leq stop_index:
+  new_array[k] gets array[j]
+  j gets j+1
+  k gets k+1
+
+for k from 0 through stop_index-start_index+1:
+  array[start_index+k] gets new_array[k]
+
+return
+</code></pre></div>
 <div class="autopermalink" data-description="Section 3.4: Merge Sort"><a href="#sorting-4-merge_sort" title="Copy heading and permalink for Section 3.4: Merge Sort">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sorting-3-bubble_sort.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sorting-5-quick_sort.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

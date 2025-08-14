@@ -212,6 +212,37 @@ traversing the tree in order, copy the items back into the array
 
 return
 </code></pre></div>
+<div class="para" id="sorting-6-tree_sort-4">Here is more detailed pseudocode for tree sort.<div class="autopermalink" data-description="Paragraph"><a href="#sorting-6-tree_sort-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program"><code class="language-none">tree_sort
+
+input: array of integers of length n
+state change: array of integers sorted into ascending order
+
+tree is an empty binary search tree
+
+for each item in the array:
+  insert the item in the tree
+
+call tree_sort_helper on the root of the tree, array, 0
+
+return
+
+tree_sort_helper(tree_node, array, index)
+
+input: node in a tree, array, index
+state_change: all descendents of the node are copied into array in ascending order starting at index, index is updated to the end of the copied portion
+
+if tree_node is empty:
+  return
+
+call tree_sort_helper on the left child of tree_node, array, index
+array[index] gets the data at tree_node
+index gets index + 1
+call tree_sort_helper on the right child of tree_node, array, index
+
+return
+</code></pre></div>
 <div class="autopermalink" data-description="Section 3.6: Tree Sort"><a href="#sorting-6-tree_sort" title="Copy heading and permalink for Section 3.6: Tree Sort">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sorting-5-quick_sort.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sorting-7-heap_sort.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
