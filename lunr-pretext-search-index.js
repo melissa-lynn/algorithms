@@ -43,7 +43,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Evaluating an Algorithm",
-  "body": " Evaluating an Algorithm  Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We've seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.  selection_sort input: array of integers of length n state change: array of integers sorted into ascending order for each position in the array: find the smallest item in the array, at or after the current position swap the item at the current position with the item just found return  We could also propose the following algorithm, random sort, to sort an array.  random_sort input: array of integers of length n state change: array of integers sorted into ascending order while the items in the array are not in order: shuffle the items into a random order return  We now have three different different algorithms for sorting an array, but which one is best? To answer this question, we need some idea of what makes an algorithm good in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on correctness and efficiency   Correctness   Does the algorithm always give correct results? If not, how often does it give correct results, and how close to correct are the results?    To evaluate the correctness of an algorithm, we typically adopt one of the following two approaches.   Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and test cases can be useful in developing the algorithm itself.    Prove mathematically that the algorithm does what is expected. The benefit of this approach is that if you have a rigorous proof, you can be certain your algorithm is correct. The challenge is that writing and communicating these proofs can be difficult, and in some cases test cases may provide more compelling evidence that an algorithm works as intended.     For sorting algorithms: test cases and proofs of correctness.   Efficiency   What are the resource requirements of the algorithm? In particular, how long does the algorithm take to run ( time efficiency ), and how much memory does the algorithm require ( space efficiency )? We are especially concerned with scalability (how well the algorithm works on very large inputs).    To evaluate the time efficiency of an algorithm with an emphasis on scalability, we could run an implementation of the algorithm on inputs of various sizes, and time how long the algorithm takes to run. However, this approach has significant drawbacks. The time an algorithm takes to run may vary significantly depending on the power of the computer used, or on the programming language used to implement the algorithm. With this approach, to compare the time efficiency of two algorithms, we would need to be sure to implement them in the same programming language and run them on the same computer. It would be preferable to have an approach that measures the time efficiency intrinsic to an algorithm, without depending on a specific language or hardware.  Similarly, to evaluate the space efficiency of an algorithm, we could track the memory usage of the algorithm for inputs of various sizes. Again, this could depend on the programming language used, and the type of memory used could depend on the hardware configuration (for example, if the algorithm fills up the cache). As with time efficiency, we would like to be able to evaluate the space requirements of an algorithm without focusing on a specific implementation.  In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the big O of an algorithm.  For sorting algorithms: analysis of time and space efficiency.  "
+  "body": " Evaluating an Algorithm  Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We've seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. We repeat the pseudocode for merge sort here.  merge_sort input: array of integers of length n state change: array of integers sorted into ascending order if the length of the array is 0 or 1: return call merge_sort to sort the first half of array call merge_sort to sort the second half of the array new_array is initialized as an empty array iterate through the first half and second half of the array simultaneously if the current item in the first half is less than the current item in the second half: append the current item from the first half to new_array go to the next item in the first half else: append the current item from the second half to new_array go to the next item in the second half if there are remaining items in the first half of the array: append them to new_array if there are remaining items in the second half of the array: append them to new_array copy new_array into the original array return  Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.  selection_sort input: array of integers of length n state change: array of integers sorted into ascending order for each position in the array: find the smallest item in the array, at or after the current position swap the item at the current position with the item just found return  We now have two different different algorithms for sorting an array, but which one is better? To answer this question, we need some idea of what makes an algorithm good in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on correctness and efficiency   Correctness   Does the algorithm always give correct results? If not, how often does it give correct results, and how close to correct are the results?    To evaluate the correctness of an algorithm, we typically adopt one of the following two approaches.   Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and they can be used to evaluate any algorithm accomplishing the same task. Test cases can also be useful in developing the algorithm itself.    Prove mathematically that the algorithm does what is expected. The benefit of this approach is that if you have a rigorous proof, you can be certain your algorithm is correct. The challenge is that writing and communicating these proofs can be difficult, and in some cases test cases may provide more compelling evidence that an algorithm works as intended.     For sorting algorithms: test cases and proofs of correctness.   Test Cases for Sorting Algorithms   Discussion of test cases     Proof of Correctness of Merge Sort   Proof     Proof of Correctness of Selection Sort   Discussion of test cases     Efficiency   What are the resource requirements of the algorithm? In particular, how long does the algorithm take to run ( time efficiency ), and how much memory does the algorithm require ( space efficiency )? We are especially concerned with scalability (how well the algorithm works on very large inputs).    To evaluate the time efficiency of an algorithm with an emphasis on scalability, we could run an implementation of the algorithm on inputs of various sizes, and time how long the algorithm takes to run. However, this approach has significant drawbacks. The time an algorithm takes to run may vary significantly depending on the power of the computer used, or on the programming language used to implement the algorithm. With this approach, to compare the time efficiency of two algorithms, we would need to be sure to implement them in the same programming language and run them on the same computer. It would be preferable to have an approach that measures the time efficiency intrinsic to an algorithm, without depending on a specific language or hardware.  Similarly, to evaluate the space efficiency of an algorithm, we could track the memory usage of the algorithm for inputs of various sizes. Again, this could depend on the programming language used, and the type of memory used could depend on the hardware configuration (for example, if the algorithm fills up the cache). As with time efficiency, we would like to be able to evaluate the space requirements of an algorithm without focusing on a specific implementation.  In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the big O of an algorithm.   Timing Sorting Algorithms   Discussion of timing experiment     Measuring Memory Use of Sorting Algorithms   Discussion of memory analysis     Runtime Analysis of Merge Sort   Not sure if this should be included here     Runtime Analysis of Selection Sort   Not sure if this should be included here    "
 },
 {
   "id": "principle-correctness",
@@ -55,13 +55,76 @@ var ptx_lunr_docs = [
   "body": " Correctness   Does the algorithm always give correct results? If not, how often does it give correct results, and how close to correct are the results?   "
 },
 {
+  "id": "intro-3-evaluation-10",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-10",
+  "type": "Example",
+  "number": "1.3.2",
+  "title": "Test Cases for Sorting Algorithms.",
+  "body": " Test Cases for Sorting Algorithms   Discussion of test cases   "
+},
+{
+  "id": "intro-3-evaluation-11",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-11",
+  "type": "Example",
+  "number": "1.3.3",
+  "title": "Proof of Correctness of Merge Sort.",
+  "body": " Proof of Correctness of Merge Sort   Proof   "
+},
+{
+  "id": "intro-3-evaluation-12",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-12",
+  "type": "Example",
+  "number": "1.3.4",
+  "title": "Proof of Correctness of Selection Sort.",
+  "body": " Proof of Correctness of Selection Sort   Discussion of test cases   "
+},
+{
   "id": "principle-efficiency",
   "level": "2",
   "url": "intro-3-evaluation.html#principle-efficiency",
   "type": "Principle",
-  "number": "1.3.2",
+  "number": "1.3.5",
   "title": "Efficiency.",
   "body": " Efficiency   What are the resource requirements of the algorithm? In particular, how long does the algorithm take to run ( time efficiency ), and how much memory does the algorithm require ( space efficiency )? We are especially concerned with scalability (how well the algorithm works on very large inputs).   "
+},
+{
+  "id": "intro-3-evaluation-17",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-17",
+  "type": "Example",
+  "number": "1.3.6",
+  "title": "Timing Sorting Algorithms.",
+  "body": " Timing Sorting Algorithms   Discussion of timing experiment   "
+},
+{
+  "id": "intro-3-evaluation-18",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-18",
+  "type": "Example",
+  "number": "1.3.7",
+  "title": "Measuring Memory Use of Sorting Algorithms.",
+  "body": " Measuring Memory Use of Sorting Algorithms   Discussion of memory analysis   "
+},
+{
+  "id": "intro-3-evaluation-19",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-19",
+  "type": "Example",
+  "number": "1.3.8",
+  "title": "Runtime Analysis of Merge Sort.",
+  "body": " Runtime Analysis of Merge Sort   Not sure if this should be included here   "
+},
+{
+  "id": "intro-3-evaluation-20",
+  "level": "2",
+  "url": "intro-3-evaluation.html#intro-3-evaluation-20",
+  "type": "Example",
+  "number": "1.3.9",
+  "title": "Runtime Analysis of Selection Sort.",
+  "body": " Runtime Analysis of Selection Sort   Not sure if this should be included here   "
 },
 {
   "id": "asymptotics-1-motivation",
@@ -69,8 +132,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-1-motivation.html",
   "type": "Section",
   "number": "2.1",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Motivation and Timing Experiments",
+  "body": " Motivation and Timing Experiments  Text  "
 },
 {
   "id": "asymptotics-2-formal_defs",
@@ -105,8 +168,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-3-intuition.html",
   "type": "Section",
   "number": "2.3",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Building Intuition",
+  "body": " Building Intuition  Text  "
 },
 {
   "id": "asymptotics-4-proofs",
@@ -231,8 +294,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-7-more_proofs.html",
   "type": "Section",
   "number": "2.7",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "More Example Proofs",
+  "body": " More Example Proofs  Text  "
 },
 {
   "id": "asymptotics-8-analyzing_algs",
@@ -240,8 +303,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-8-analyzing_algs.html",
   "type": "Section",
   "number": "2.8",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Analyzing Algorithms",
+  "body": " Analyzing Algorithms  Text  "
 },
 {
   "id": "asymptotics-9-more_analyzing",
@@ -249,8 +312,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-9-more_analyzing.html",
   "type": "Section",
   "number": "2.9",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "More on Analyzing Algorithms",
+  "body": " More on Analyzing Algorithms  Text  "
 },
 {
   "id": "asymptotics-10-complexity_classes",
@@ -258,8 +321,8 @@ var ptx_lunr_docs = [
   "url": "asymptotics-10-complexity_classes.html",
   "type": "Section",
   "number": "2.10",
-  "title": "Title",
-  "body": " Title  Text  "
+  "title": "Complexity Classes",
+  "body": " Complexity Classes  Text  "
 },
 {
   "id": "sorting-1-selection_sort",

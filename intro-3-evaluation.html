@@ -152,16 +152,16 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="asymptotics.html" class="internal"><span class="codenumber">2</span> <span class="title">Asymptotics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-1-motivation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Title</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-1-motivation.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Motivation and Timing Experiments</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-2-formal_defs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Formal Definitions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-3-intuition.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Title</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-3-intuition.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Building Intuition</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-4-proofs.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Proving <span class="process-math">\(T(n)=O(f(n))\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-5-not_proofs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Proving <span class="process-math">\(T(n)\)</span> is not <span class="process-math">\(O(f(n))\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-6-properties.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Properties</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-7-more_proofs.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Title</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-8-analyzing_algs.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Title</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-9-more_analyzing.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Title</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-10-complexity_classes.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Title</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-7-more_proofs.html" class="internal"><span class="codenumber">2.7</span> <span class="title">More Example Proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-8-analyzing_algs.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Analyzing Algorithms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-9-more_analyzing.html" class="internal"><span class="codenumber">2.9</span> <span class="title">More on Analyzing Algorithms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="asymptotics-10-complexity_classes.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Complexity Classes</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -196,7 +196,40 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="intro-3-evaluation"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Evaluating an Algorithm</span>
 </h2>
-<div class="para" id="intro-3-evaluation-2">Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We’ve seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="intro-3-evaluation-2">Suppose we have two different algorithms for the same task. For example, there are many different algorithms for sorting an array. We’ve seen merge sort, which sorts an array by sorting the first half and the second half separately, then merging the two sorted halves. We repeat the pseudocode for merge sort here.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program"><code class="language-none">merge_sort
+
+input: array of integers of length n
+state change: array of integers sorted into ascending order
+
+if the length of the array is 0 or 1:
+  return
+
+call merge_sort to sort the first half of array
+call merge_sort to sort the second half of the array
+
+new_array is initialized as an empty array
+
+iterate through the first half and second half of the array simultaneously
+  if the current item in the first half is less than the current item in the second half:
+    append the current item from the first half to new_array
+    go to the next item in the first half
+  else:
+    append the current item from the second half to new_array
+    go to the next item in the second half
+
+if there are remaining items in the first half of the array:
+  append them to new_array
+
+if there are remaining items in the second half of the array:
+  append them to new_array
+
+copy new_array into the original array
+
+return
+</code></pre></div>
+<div class="para" id="intro-3-evaluation-4">Selection sort provides another approach to sorting: we repeatedly find the next smallest item in the array, and move it into the correct position. Here is pseudocode for selection sort.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="code-box"><pre class="program"><code class="language-none">selection_sort
 
@@ -209,19 +242,7 @@ for each position in the array:
 
 return
 </code></pre></div>
-<div class="para" id="intro-3-evaluation-4">We could also propose the following algorithm, random sort, to sort an array.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="code-box"><pre class="program"><code class="language-none">random_sort
-
-input: array of integers of length n
-state change: array of integers sorted into ascending order
-
-while the items in the array are not in order:
-  shuffle the items into a random order
-
-return
-</code></pre></div>
-<div class="para" id="intro-3-evaluation-6">We now have three different different algorithms for sorting an array, but which one is best? To answer this question, we need some idea of what makes an algorithm “good” in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on <em class="emphasis">correctness</em> and <em class="emphasis">efficiency</em><div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="intro-3-evaluation-6">We now have two different different algorithms for sorting an array, but which one is better? To answer this question, we need some idea of what makes an algorithm “good” in general, or how to compare two algorithms. When evaluating an algorithm, we typically focus on <em class="emphasis">correctness</em> and <em class="emphasis">efficiency</em><div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="principle theorem-like" id="principle-correctness"><h3 class="heading">
 <span class="type">Principle</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Correctness.</span>
@@ -232,7 +253,7 @@ return
 <div class="para">To evaluate the correctness of an algorithm, we typically adopt one of the following two approaches.</div>
 <ul class="disc" id="intro-3-evaluation-8-1">
 <li id="intro-3-evaluation-8-1-1">
-<div class="para" id="intro-3-evaluation-8-1-1-1">Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and test cases can be useful in developing the algorithm itself.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-8-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="intro-3-evaluation-8-1-1-1">Write test cases with expected output, and run an implementation of the algorithm on these test cases to verify that the algorithm produces the expected output. The challenge of this approach is writing test cases that cover all possible situations. If we miss a situation in our test cases, we may think our algorithm is correct when it is not. One of the benefits of this approach is that test cases can be written before the algorithm is written, and they can be used to evaluate any algorithm accomplishing the same task. Test cases can also be useful in developing the algorithm itself.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-8-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item"><a href="#intro-3-evaluation-8-1-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
@@ -246,20 +267,46 @@ return
 </div>
 <div class="para" id="intro-3-evaluation-9">For sorting algorithms: test cases and proofs of correctness.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="principle theorem-like" id="principle-efficiency"><h3 class="heading">
-<span class="type">Principle</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Efficiency.</span>
+<details id="intro-3-evaluation-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Test Cases for Sorting Algorithms.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-10-2-1">Discussion of test cases<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-10-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.2: Test Cases for Sorting Algorithms"><a href="#intro-3-evaluation-10" title="Copy heading and permalink for Example 1.3.2: Test Cases for Sorting Algorithms">🔗</a></div></article></details><details id="intro-3-evaluation-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Proof of Correctness of Merge Sort.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-11-2-1">Proof<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-11-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.3: Proof of Correctness of Merge Sort"><a href="#intro-3-evaluation-11" title="Copy heading and permalink for Example 1.3.3: Proof of Correctness of Merge Sort">🔗</a></div></article></details><details id="intro-3-evaluation-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Proof of Correctness of Selection Sort.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-12-2-1">Discussion of test cases<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-12-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.4: Proof of Correctness of Selection Sort"><a href="#intro-3-evaluation-12" title="Copy heading and permalink for Example 1.3.4: Proof of Correctness of Selection Sort">🔗</a></div></article></details><article class="principle theorem-like" id="principle-efficiency"><h3 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Efficiency.</span>
 </h3>
 <div class="para" id="principle-efficiency-2-1">What are the resource requirements of the algorithm? In particular, how long does the algorithm take to run (<em class="emphasis">time efficiency</em>), and how much memory does the algorithm require (<em class="emphasis">space efficiency</em>)? We are especially concerned with <em class="emphasis">scalability</em> (how well the algorithm works on very large inputs).<div class="autopermalink" data-description="Paragraph"><a href="#principle-efficiency-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Principle 1.3.2: Efficiency"><a href="#principle-efficiency" title="Copy heading and permalink for Principle 1.3.2: Efficiency">🔗</a></div></article><div class="para" id="intro-3-evaluation-11">To evaluate the time efficiency of an algorithm with an emphasis on scalability, we could run an implementation of the algorithm on inputs of various sizes, and time how long the algorithm takes to run. However, this approach has significant drawbacks. The time an algorithm takes to run may vary significantly depending on the power of the computer used, or on the programming language used to implement the algorithm. With this approach, to compare the time efficiency of two algorithms, we would need to be sure to implement them in the same programming language and run them on the same computer. It would be preferable to have an approach that measures the time efficiency intrinsic to an algorithm, without depending on a specific language or hardware.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Principle 1.3.5: Efficiency"><a href="#principle-efficiency" title="Copy heading and permalink for Principle 1.3.5: Efficiency">🔗</a></div></article><div class="para" id="intro-3-evaluation-14">To evaluate the time efficiency of an algorithm with an emphasis on scalability, we could run an implementation of the algorithm on inputs of various sizes, and time how long the algorithm takes to run. However, this approach has significant drawbacks. The time an algorithm takes to run may vary significantly depending on the power of the computer used, or on the programming language used to implement the algorithm. With this approach, to compare the time efficiency of two algorithms, we would need to be sure to implement them in the same programming language and run them on the same computer. It would be preferable to have an approach that measures the time efficiency intrinsic to an algorithm, without depending on a specific language or hardware.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="intro-3-evaluation-12">Similarly, to evaluate the space efficiency of an algorithm, we could track the memory usage of the algorithm for inputs of various sizes. Again, this could depend on the programming language used, and the type of memory used could depend on the hardware configuration (for example, if the algorithm fills up the cache). As with time efficiency, we would like to be able to evaluate the space requirements of an algorithm without focusing on a specific implementation.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="intro-3-evaluation-15">Similarly, to evaluate the space efficiency of an algorithm, we could track the memory usage of the algorithm for inputs of various sizes. Again, this could depend on the programming language used, and the type of memory used could depend on the hardware configuration (for example, if the algorithm fills up the cache). As with time efficiency, we would like to be able to evaluate the space requirements of an algorithm without focusing on a specific implementation.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="intro-3-evaluation-13">In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the “big O” of an algorithm.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="intro-3-evaluation-16">In order to more universally describe the time and space efficiency of an algorithm, we will use asymptotics. This approach allows us to describe the growth of the time and space requirements of an algorithm as input size increases, in a way that does not depend on a specific implementation of the algorithm. You may have seen this before as the “big O” of an algorithm.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="intro-3-evaluation-14">For sorting algorithms: analysis of time and space efficiency.<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="intro-3-evaluation-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Timing Sorting Algorithms.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-17-2-1">Discussion of timing experiment<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-17-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Section 1.3: Evaluating an Algorithm"><a href="#intro-3-evaluation" title="Copy heading and permalink for Section 1.3: Evaluating an Algorithm">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 1.3.6: Timing Sorting Algorithms"><a href="#intro-3-evaluation-17" title="Copy heading and permalink for Example 1.3.6: Timing Sorting Algorithms">🔗</a></div></article></details><details id="intro-3-evaluation-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Measuring Memory Use of Sorting Algorithms.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-18-2-1">Discussion of memory analysis<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-18-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.7: Measuring Memory Use of Sorting Algorithms"><a href="#intro-3-evaluation-18" title="Copy heading and permalink for Example 1.3.7: Measuring Memory Use of Sorting Algorithms">🔗</a></div></article></details><details id="intro-3-evaluation-19" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Runtime Analysis of Merge Sort.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-19-2-1">Not sure if this should be included here<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-19-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.8: Runtime Analysis of Merge Sort"><a href="#intro-3-evaluation-19" title="Copy heading and permalink for Example 1.3.8: Runtime Analysis of Merge Sort">🔗</a></div></article></details><details id="intro-3-evaluation-20" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Runtime Analysis of Selection Sort.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="intro-3-evaluation-20-2-1">Not sure if this should be included here<div class="autopermalink" data-description="Paragraph"><a href="#intro-3-evaluation-20-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.3.9: Runtime Analysis of Selection Sort"><a href="#intro-3-evaluation-20" title="Copy heading and permalink for Example 1.3.9: Runtime Analysis of Selection Sort">🔗</a></div></article></details><div class="autopermalink" data-description="Section 1.3: Evaluating an Algorithm"><a href="#intro-3-evaluation" title="Copy heading and permalink for Section 1.3: Evaluating an Algorithm">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="intro-2-pseudocode.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="asymptotics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
