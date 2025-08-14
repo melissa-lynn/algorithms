@@ -1,3 +1,5 @@
+<number name="numNodes" hide>3</number>
+
 <p>Adjacency matrix: <matrixInput name="userMatrix" numRows="3" numColumns="3" showSizeControls="false" defaultEntry="0"/>
 <answer>
   <award>
