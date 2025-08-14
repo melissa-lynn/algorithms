@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js"></script><script>function onLoad() {window.renderDoenetViewerToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet" data-doenet-add-virtual-keyboard="false" data-doenet-send-resize-events="true">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    <p>Adjacency matrix: <matrixInput name="userMatrix" numRows="3" numColumns="3" showSizeControls="false" defaultEntry="0"/>
+<answer>
+  <award>
+    <when>
+      $userMatrix = $answerMatrix
+    </when>
+  </award>
+</answer>
+</p>
+
+<matrix name="answerMatrix" hide>
+  <row>0 0 1</row>
+  <row>0 0 1</row>
+  <row>1 1 0</row>
+</matrix>
+
+<sideBySide>
+
+<graph name="userGraph" displayXAxis="false" displayYAxis="false" showNavigation="false" showBorder="false">
+  <text anchor="(0,9)">Your Graph</text>
+  <map name="userNodes">
+    <template>
+      <point draggable="false">(7 cos($i*2pi/$numNodes), 7 sin($i*2pi/$numNodes))
+        <label><m>$i</m></label>
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+  <map>
+    <template>
+      <map>
+        <template>
+          <conditionalContent condition="$userMatrix.matrix[$i][$j]=1">
+            <lineSegment endpoints="$userNodes[$i] $userNodes[$j]" draggable="false"/>
+          </conditionalContent>
+        </template>
+        <sources alias="j">
+          <sequence from="1" to="$numNodes" step="1"/>
+        </sources>
+      </map>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+</graph>
+
+<graph name="answerGraph" displayXAxis="false" displayYAxis="false" showNavigation="false" showBorder="false">
+  <text anchor="(0,9)">Answer Graph</text>
+  <map name="answerNodes">
+    <template>
+      <point draggable="false">(7 cos($i*2pi/$numNodes), 7 sin($i*2pi/$numNodes))
+        <label><m>$i</m></label>
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+  <map>
+    <template>
+      <map>
+        <template>
+          <conditionalContent condition="$answerMatrix.matrix[$i][$j]=1">
+            <lineSegment endpoints="$answerNodes[$i] $answerNodes[$j]" draggable="false"/>
+          </conditionalContent>
+        </template>
+        <sources alias="j">
+          <sequence from="1" to="$i" step="1"/>
+        </sources>
+      </map>
+    </template>
+    <sources alias="i">
+      <sequence from="1" to="$numNodes" step="1"/>
+    </sources>
+  </map>
+</graph>
+
+</sideBySide> 
+  </script>
+</div></div>
+</body>
+</html>

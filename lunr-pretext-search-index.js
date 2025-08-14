@@ -325,6 +325,96 @@ var ptx_lunr_docs = [
   "body": " Heap Sort  Heap sort works by inserting all items in a min-heap, then repeatedly removing the minimum value from the heap to produce the items in increasing order.  heap_sort input: array of integers of length n state change: array of integers sorted into ascending order heap is an min-heap for each item in the array: insert the item in the heap for each position in the array: extract the minimum value from the heap and assign it to the current position in the array return  "
 },
 {
+  "id": "graphs-1-definitions",
+  "level": "1",
+  "url": "graphs-1-definitions.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Graph Definitions",
+  "body": " Graph Definitions  Text  "
+},
+{
+  "id": "graphs-2-representations",
+  "level": "1",
+  "url": "graphs-2-representations.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Graph Representations",
+  "body": " Graph Representations  Text   "
+},
+{
+  "id": "graphs-3-searching",
+  "level": "1",
+  "url": "graphs-3-searching.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Graph Searching",
+  "body": " Graph Searching  Text  "
+},
+{
+  "id": "graphs-4-shortest_paths",
+  "level": "1",
+  "url": "graphs-4-shortest_paths.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Shortest Paths",
+  "body": " Shortest Paths  Text  "
+},
+{
+  "id": "graphs-5-weighted",
+  "level": "1",
+  "url": "graphs-5-weighted.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Weighted Graphs",
+  "body": " Weighted Graphs  Text  "
+},
+{
+  "id": "graphs-6-dijkstra",
+  "level": "1",
+  "url": "graphs-6-dijkstra.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Dijkstra’s Algorithms",
+  "body": " Dijkstra's Algorithms  Text  "
+},
+{
+  "id": "graphs-7-directed",
+  "level": "1",
+  "url": "graphs-7-directed.html",
+  "type": "Section",
+  "number": "4.7",
+  "title": "Directed Graphs",
+  "body": " Directed Graphs  Text  "
+},
+{
+  "id": "graphs-8-topological_ordering",
+  "level": "1",
+  "url": "graphs-8-topological_ordering.html",
+  "type": "Section",
+  "number": "4.8",
+  "title": "Topological Ordering",
+  "body": " Topological Ordering  Text  "
+},
+{
+  "id": "graphs-9-prim",
+  "level": "1",
+  "url": "graphs-9-prim.html",
+  "type": "Section",
+  "number": "4.9",
+  "title": "Prim’s Algorithm",
+  "body": " Prim's Algorithm  Text  "
+},
+{
+  "id": "graphs-10-ford_fulkerson",
+  "level": "1",
+  "url": "graphs-10-ford_fulkerson.html",
+  "type": "Section",
+  "number": "4.10",
+  "title": "Ford-Fulkerson Algorithm",
+  "body": " Ford-Fulkerson Algorithm  Text  "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
